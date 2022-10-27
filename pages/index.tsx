@@ -3,7 +3,9 @@ import { Greeting } from '~src/components/Greeting/Greeting'
 
 const Home: NextPage = () => {
   return (
-      <Greeting variant='light' message='Hello world!' />
+    <div id={'home-container'}>
+
+    </div>
   )
 }
 

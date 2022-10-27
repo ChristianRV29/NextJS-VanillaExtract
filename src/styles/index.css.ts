@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { createTheme, createThemeContract, style, styleVariants } from '@vanilla-extract/css';
 
 
 // Style
@@ -24,4 +24,19 @@ export const container = styleVariants({
     dark: [baseContainer,{
         background: '#12455D',
     }]
+})
+
+
+// Themes
+
+
+// Theme Contracts
+const themeBase = createThemeContract({
+    primary: null,
+    background: null,
+})
+
+//Create theme
+export const lighTheme = createTheme({
+    primary: 'B2C8DF',
 })
