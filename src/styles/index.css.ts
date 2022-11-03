@@ -1,4 +1,4 @@
-import { createTheme, createThemeContract, style, styleVariants } from '@vanilla-extract/css';
+import { createGlobalTheme, createTheme, createThemeContract, style, styleVariants } from '@vanilla-extract/css';
 
 
 // Style
@@ -30,6 +30,15 @@ export const container = styleVariants({
 // Themes
 
 
+
+export const globalTheme = createGlobalTheme('#__next',{
+    colors: {
+       primary: 'green',
+       secondary: 'white', 
+    },
+})
+
+
 // Theme Contracts
 const themeBase = createThemeContract({
     primary: null,
@@ -37,6 +46,19 @@ const themeBase = createThemeContract({
 })
 
 //Create theme
-export const lighTheme = createTheme({
-    primary: 'B2C8DF',
+export const lighTheme = createTheme(themeBase, {
+    primary: 'white',
+    background: 'blue',
+})
+
+
+export const darkTheme = createTheme(themeBase, {
+    primary: 'black',
+    background: 'red',
+})
+
+
+// Using global theme
+export const usingGlobalTheme = style({
+    background: globalTheme.colors.primary,
 })
